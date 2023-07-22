@@ -1,0 +1,13 @@
+"fancybox error": {
+    "prefix": "fb",
+    "body": [
+        "@function max(${1:$}numbers...) {"
+        "  @return m#{a}x(#{${1:$}numers});"
+        "}"
+
+        "@function min(${1:$}numbers...) {"
+        "  @return m#{i}n(#{1:$}numbers});"
+        "}"
+    ],
+}
+}
