@@ -45,7 +45,7 @@
             right: 0;
             height: 2px;
             border-radius: 1px;
-            background-color: #fff;
+            background-color: #707070;
         }
     }
 }
@@ -82,25 +82,6 @@
     &__info-text {
         margin-bottom: 16px;
         max-width: 475px;
-    }
-
-    &__info-email {
-        font-weight: 600;
-        font-size: 14px;
-        color: $title;
-        margin-bottom: 22px;
-        padding-left: 30px;
-        display: inline-block;
-        position: relative;
-        &::before {
-            content: "";
-            background-image: url(../images/envelope.svg);
-            position: absolute;
-            top: 8px;
-            left: 0;
-            width: 16px;
-            height: 12px;
-        }
     }
 
     &__form {
@@ -273,6 +254,8 @@
 .breadcrumbs {
     background: rgba(#dfdfdf, 0.5);
     padding: 13px 14px;
+    position: relative;
+    z-index: 999;
     &__list {
         display: flex;
     }
@@ -352,7 +335,7 @@
 
 .new-collection {
     text-align: center;
-    padding: 45px 0 105px;
+    padding: 45px 0 35px;
 
     &__title {
         @extend %title-font;
@@ -384,9 +367,11 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 30px;
+    padding-bottom: 70px;
 
     &__item {
         position: relative;
+        margin: 0 auto;
         &:hover {
             .collection__info {
                 opacity: 1;
@@ -597,6 +582,17 @@
         max-height: 1150px;
         height: 100%;
     }
+
+    &.gallery-page {
+        .gallery__item img {
+            max-height: 1165px;
+        }
+    }
+
+    .gallery__item:nth-child(8) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
 }
 
 .blog-box {
@@ -706,17 +702,16 @@
 .inspiration {
     padding-top: 100px;
     position: relative;
-&::after{
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
-background-image: url(../images/inspiration-bg.jpg);
-height: 362px;
-z-index: -1;
-}
-
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(../images/inspiration-bg.jpg);
+        height: 362px;
+        z-index: -1;
+    }
 
     &__inner {
         display: flex;
@@ -767,10 +762,63 @@ z-index: -1;
         border-radius: 4px;
     }
 
-    &__line{
+    &__line {
         height: 2px;
         border: 4px;
         background-color: $title;
         margin-top: -2px;
+    }
+}
+
+.partners {
+    padding: 16px 0 60px;
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    &__item {
+        margin: 0 auto;
+    }
+}
+
+.map {
+    margin-top: -58px;
+    margin-bottom: 50px;
+}
+
+.contact {
+    padding-bottom: 100px;
+
+    &__title {
+        color: $title;
+        @extend %title-font;
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #6d7278;
+            width: 200px;
+            height: 2px;
+        }
+    }
+
+    .contact__social {
+        padding-left: 284px;
+        display: flex;
+        margin-bottom: 20px;
+
+    }
+    &__box {
+        padding-left: 284px;
+    }
+
+    &__form {
+        padding-left: 284px;
     }
 }
